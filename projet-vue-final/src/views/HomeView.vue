@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import {ofetch} from 'ofetch'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+
   </main>
 </template>
