@@ -18,11 +18,9 @@ export function useApi() {
       // baseUrl: Allows you to omit the host when doing doing requests:
       // example: await $api("/rest/v3/short-urls")
       baseURL: import.meta.env.VITE_API_HOST,
-      // This is an "interceptor". It executes this function everytime a request is fired.
+    
       onRequest({ options }) {
-        // Append to the request's options a new header "X-Api-Key", whose value is your API token
-        // It is not really safe to set the API token as an environment variable, because everyone will be able to read it.
-        // You should instead save it in the local storage, and read the local storage on each request
+
         options.headers.set('X-Api-Key', import.meta.env.VITE_API_KEY)
       },
       // Another interceptor, that is being called when receiving a response.
